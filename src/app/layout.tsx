@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { FloatingContact } from "@/components/FloatingContact";
+import { CursorGlow } from "@/components/CursorGlow";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
       <body className="flex flex-col min-h-screen">
         <ThemeProvider>
+          <CursorGlow />
           {children}
           <FloatingContact />
         </ThemeProvider>

@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F8F9FA;
-  --foreground: #0F172A;
+  --background: #FAF7F4;
+  --foreground: #1A0F0A;
   --accent: #6F4E37; /* Coffee */
-  --muted: #E2E8F0;
+  --muted: #E8DDD5;
+  --gold: #C9A84C;
 }
 
 [data-theme="dark"] {
-  --background: #1B120C; /* Rich Espresso */
+  --background: #140D08; /* Rich Espresso */
   --foreground: #F4ECE1; /* Creamy White */
   --accent: #C4A484; /* Latte / Cappuccino */
   --muted: #2A1C14; /* Deep Mocha */
+  --gold: #D4AF6A;
 }
 
 @theme inline {
@@ -19,6 +21,7 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-muted: var(--muted);
+  --color-gold: var(--gold);
   --font-heading: var(--font-playfair);
   --font-body: var(--font-inter);
 }
@@ -37,4 +40,93 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), serif;
+}
+
+/* Premium text selection */
+::selection {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* Grain texture overlay */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: -200%;
+  width: 400%;
+  height: 400%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+  animation: grain 8s steps(10) infinite;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10%       { transform: translate(-5%, -10%); }
+  20%       { transform: translate(-15%, 5%); }
+  30%       { transform: translate(7%, -25%); }
+  40%       { transform: translate(-5%, 25%); }
+  50%       { transform: translate(-15%, 10%); }
+  60%       { transform: translate(15%, 0%); }
+  70%       { transform: translate(0%, 15%); }
+  80%       { transform: translate(3%, 35%); }
+  90%       { transform: translate(-10%, 10%); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(-3deg); }
+  50%       { transform: translateY(-8px) rotate(-3deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(111, 78, 55, 0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(111, 78, 55, 0); }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--accent) 0%,
+    var(--gold) 40%,
+    var(--accent) 60%,
+    var(--gold) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.25) 50%,
+    transparent 60%
+  );
+  background-size: 200% auto;
+  animation: shimmer 2.5s linear infinite;
+}
+
+.floating-badge {
+  animation: float 4s ease-in-out infinite;
+}
+
+.count-up {
+  font-variant-numeric: tabular-nums;
 }
