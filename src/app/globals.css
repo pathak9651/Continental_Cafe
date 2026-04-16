@@ -3,14 +3,14 @@
 :root {
   --background: #F8F9FA;
   --foreground: #0F172A;
-  --accent: #C58371; /* Rose Gold / Copper */
+  --accent: #6F4E37; /* Coffee */
   --muted: #E2E8F0;
 }
 
 [data-theme="dark"] {
   --background: #1B120C; /* Rich Espresso */
   --foreground: #F4ECE1; /* Creamy White */
-  --accent: #D49A6A; /* Caramel / Latte */
+  --accent: #C4A484; /* Latte / Cappuccino */
   --muted: #2A1C14; /* Deep Mocha */
 }
 
