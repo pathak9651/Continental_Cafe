@@ -21,7 +21,7 @@ const quickLinks = [
 export function Footer() {
   return (
     <footer className="relative overflow-hidden"
-      style={{ backgroundColor: "var(--foreground)" }}>
+      style={{ backgroundColor: "#2a1f1a" }}>
       {/* Subtle texture */}
       <div
         className="absolute inset-0 opacity-5 pointer-events-none"
@@ -38,7 +38,7 @@ export function Footer() {
               style={{ color: "var(--background)" }}>
               Continental<span style={{ color: "var(--accent)" }}>.</span>
             </h2>
-            <p className="text-sm leading-relaxed mb-6 max-w-xs" style={{ color: "rgba(var(--background-rgb, 250,247,244), 0.55)" }}>
+            <p className="text-sm leading-relaxed mb-6 max-w-xs" style={{ color: "rgba(250,247,244, 0.85)" }}>
               Premium coffee and continental delights served in a luxurious, cozy environment. Experience the taste of luxury.
             </p>
 
@@ -52,7 +52,7 @@ export function Footer() {
                   whileHover={{ y: -3, scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 hover:bg-accent hover:border-accent"
-                  style={{ borderColor: "rgba(250,247,244,0.15)", color: "rgba(250,247,244,0.6)" }}
+                  style={{ borderColor: "rgba(250,247,244,0.35)", color: "rgba(250,247,244,0.85)" }}
                 >
                   <Icon size={17} />
                 </motion.a>
@@ -63,7 +63,7 @@ export function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-sm uppercase tracking-[0.25em] font-semibold mb-6"
-              style={{ color: "var(--accent)" }}>
+              style={{ color: "#D4AF6A" }}>
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -72,7 +72,7 @@ export function Footer() {
                   <Link
                     href={href}
                     className="group flex items-center gap-2 text-sm transition-colors duration-300 hover:text-white"
-                    style={{ color: "rgba(250,247,244,0.5)" }}
+                    style={{ color: "rgba(250,247,244,0.8)" }}
                   >
                     <FiArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                     {name}
@@ -85,10 +85,10 @@ export function Footer() {
           {/* Newsletter */}
           <div>
             <h3 className="text-sm uppercase tracking-[0.25em] font-semibold mb-2"
-              style={{ color: "var(--accent)" }}>
+              style={{ color: "#D4AF6A" }}>
               Newsletter
             </h3>
-            <p className="text-sm mb-5" style={{ color: "rgba(250,247,244,0.5)" }}>
+            <p className="text-sm mb-5" style={{ color: "rgba(250,247,244,0.8)" }}>
               Get exclusive offers and news delivered to your inbox.
             </p>
             <div className="flex gap-0 border border-white/10 rounded-none overflow-hidden">
@@ -96,7 +96,7 @@ export function Footer() {
                 type="email"
                 placeholder="Your email address"
                 className="flex-1 bg-transparent px-4 py-3 text-sm focus:outline-none"
-                style={{ color: "rgba(250,247,244,0.8)" }}
+                style={{ color: "rgba(250,247,244,1)" }}
               />
               <button
                 className="px-5 py-3 bg-accent transition-all duration-300 hover:bg-accent/80 flex items-center justify-center"
@@ -110,11 +110,11 @@ export function Footer() {
 
         {/* Divider */}
         <div className="h-[1px] w-full mb-8"
-          style={{ background: "linear-gradient(to right, transparent, rgba(250,247,244,0.1), transparent)" }} />
+          style={{ background: "linear-gradient(to right, transparent, rgba(250,247,244,0.25), transparent)" }} />
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs"
-          style={{ color: "rgba(250,247,244,0.3)" }}>
+          style={{ color: "rgba(250,247,244,0.6)" }}>
           <span>© {new Date().getFullYear()} Continental Cafee. All rights reserved.</span>
           <span className="tracking-widest uppercase">Crafted with passion</span>
         </div>

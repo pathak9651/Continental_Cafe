@@ -45,9 +45,9 @@ export function Navbar() {
   return (
     <nav
       className={clsx(
-        "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500",
+        "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 will-change-transform",
         scrolled
-          ? "py-3 bg-background/95 backdrop-blur-xl shadow-lg shadow-black/5 border-b border-accent/10"
+          ? "py-3 bg-background/95 backdrop-blur-sm shadow-lg shadow-black/5 border-b border-accent/10"
           : "py-5 bg-transparent"
       )}
     >

@@ -92,7 +92,7 @@ export function About() {
           </motion.div>
 
           {/* Ambient glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-accent/20 rounded-full blur-3xl -z-10" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-accent/15 rounded-full blur-2xl -z-10 will-change-transform" />
         </motion.div>
 
         {/* Text Content */}
